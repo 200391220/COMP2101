@@ -30,6 +30,7 @@ echo ""
 # Task 1
 echo "Setgid files:"
 echo "============="
+# We use "find" command with file type executable and permission "2000" -> means set group id files and all errors redirected to /dev/null, We sort it by group
 find / -type f -executable -perm -2000 -ls 2>/dev/null | sort -k 3
 echo ""
 
@@ -40,5 +41,6 @@ echo ""
 # Task 2
 echo "10 Largest Regular Files Sorted By Size"
 echo "============="
+# We use "find" command with file type excecutable and size in MBytes and then we sort it by size and extract fisrt 10 rows and print filename, owner and size of file
 find / -type f -exec ls -l --block-size=MB {} + 2>/dev/null | sort -k 5 -hr | head -n 10 | awk '{print $9, $3, $5}'
 echo ""
