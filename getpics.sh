@@ -20,9 +20,11 @@ test -f ~/Pictures/pics.zip && unzip -d ~/Pictures -o -q ~/Pictures/pics.zip && 
 # TASK - 1
 
 # download a tgzfile of pictures to our Pictures directory if it isn't already there - assumes you are online
+# We Test if file name pics.tgz exists or we get the file from https://zonzorp.net/pics.tgz and store it at ~/Pictures/pics.tgz
 test -f ~/Pictures/pics.tgz || wget -q -O ~/Pictures/pics.tgz https://zonzorp.net/pics.tgz
 
 # unpack the downloaded tgzfile if it is there, then delete the local copy of the tgzfile
+# We check for file pics.tgz and then using "tar" we extract the .tgz file with "-x" and "-zf" commands and after that we remove the .tgz file using "rem" 
 test -f ~/Pictures/pics.tgz && tar -C ~/Pictures -zxf ~/Pictures/pics.tgz && rm ~/Pictures/pics.tgz
 
 # Make a report on what we have in the Pictures directory
