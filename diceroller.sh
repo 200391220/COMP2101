@@ -6,6 +6,8 @@
 # Task: Improve this script by making it roll as many dice as there are letters in your first name, instead of just one
 
 # roll the dice and display the result
+# We use "RANDOM" to get a random number then divid it with 6 as dice has 6 sides and add + 1
+# $((<COMMAND EXCECUTE BETWEEN THIS BRACETS>))
 echo "
 Rolling...
 $(( RANDOM % 6 + 1)) rolled L
